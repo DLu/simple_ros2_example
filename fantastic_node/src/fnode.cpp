@@ -1,11 +1,11 @@
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 #include <awesome_library/awesomeness.h>
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "fantastic");
+  rclcpp::init(argc, argv);
   awesome_library::Awesomeness a;
-  ROS_INFO("Fantastic %f", a.pose.x);
+  RCLCPP_INFO(rclcpp::get_logger("FantasticNode"), "Fantastic %f", a.pose.x);
   ros::spin();
   return 0;
 }

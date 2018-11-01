@@ -10,5 +10,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <depend>geometry_msgs</depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>

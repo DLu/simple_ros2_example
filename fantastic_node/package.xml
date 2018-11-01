@@ -10,6 +10,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <depend>awesome_library</depend>
-  <depend>roscpp</depend>
+  <depend>rclcpp</depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>
