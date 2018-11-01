@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>awesome_library</name>
+  <version>0.0.0</version>
+  <description>The awesome_library package</description>
+
+  <maintainer email="davidvlu@gmail.com">David V. Lu!!</maintainer>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>geometry_msgs</depend>
+
+</package>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>fantastic_node</name>
+  <version>0.0.0</version>
+  <description>The fantastic_node package</description>
+
+  <maintainer email="davidvlu@gmail.com">David V. Lu!!</maintainer>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>awesome_library</depend>
+  <depend>roscpp</depend>
+
+</package>
