@@ -7,7 +7,7 @@ set(include_dirs
         ${awesome_library_INCLUDE_DIRS}
 )
 set(catkin_LIBRARIES
-        ${awesome_library_LIBRARIES}
+        ${rclcpp_LIBRARIES} ${awesome_library_LIBRARIES}
 )
 ament_export_include_directories(${include_dirs})
 
