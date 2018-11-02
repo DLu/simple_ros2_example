@@ -8,7 +8,7 @@ set(include_dirs
 )
 set(catkin_LIBRARIES
   "rclcpp"
-  "awesome"
+  "awesome_library"
 )
 ament_auto_find_build_dependencies(REQUIRED ${catkin_LIBRARIES})      
 ament_export_include_directories(${include_dirs})
