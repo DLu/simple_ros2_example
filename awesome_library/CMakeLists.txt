@@ -2,28 +2,22 @@ cmake_minimum_required(VERSION 3.5)
 project(awesome_library)
 find_package(ament_cmake REQUIRED)
 find_package(geometry_msgs REQUIRED)
-set(include_dirs
-        include
-        ${geometry_msgs_INCLUDE_DIRS}
-)
-set(catkin_LIBRARIES
-        ${geometry_msgs_LIBRARIES}
-)
+
+include_directories(include)
+
+add_library(awesome_library src/awesomeness.cpp)
+ament_target_dependencies(awesome_library "geometry_msgs")
 ament_export_include_directories(${include_dirs})
-
-
-
+ament_export_libraries(${PROJECT_NAME})
+ament_export_dependencies(geometry_msgs)
 ament_package()
 
-add_library(awesomeness src/awesomeness.cpp)
-target_link_libraries(awesomeness ${catkin_LIBRARIES})
-
-include_directories(${include_dirs})
-install(DIRECTORY include/${PROJECT_NAME}/
+install(DIRECTORY include/
         DESTINATION include/${PROJECT_NAME}
 )
-install(TARGETS awesomeness
+install(TARGETS awesome_library
         ARCHIVE DESTINATION lib
-        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-        RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION bin
 )
+
