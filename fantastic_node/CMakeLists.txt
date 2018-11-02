@@ -10,7 +10,7 @@ set(catkin_LIBRARIES
   "rclcpp"
   "awesome"
 )
-ament_auto_find_build_dependencies(REQUIRED ${catkin_LIBRARIRES})      
+ament_auto_find_build_dependencies(REQUIRED ${catkin_LIBRARIES})      
 ament_export_include_directories(${include_dirs})
 
 
