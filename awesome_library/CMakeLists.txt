@@ -3,21 +3,19 @@ project(awesome_library)
 find_package(ament_cmake REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
-include_directories(include)
+include_directories(include ${geometry_msgs_INCLUDE_DIRS})
 
-add_library(awesome_library src/awesomeness.cpp)
-ament_target_dependencies(awesome_library "geometry_msgs")
+add_library(awesomeness src/awesomeness.cpp)
+ament_target_dependencies(awesomeness "geometry_msgs")
 ament_export_include_directories(include)
-ament_export_libraries(${PROJECT_NAME})
+ament_export_libraries(awesomeness)
 ament_export_dependencies(geometry_msgs)
 ament_package()
-
-install(DIRECTORY include/
-        DESTINATION include
+install(DIRECTORY include/${PROJECT_NAME}/
+        DESTINATION include/${PROJECT_NAME}
 )
-install(TARGETS awesome_library
+install(TARGETS awesomeness
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
 )
-

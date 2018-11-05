@@ -4,9 +4,8 @@
 int main(int argc, char** argv)
 {
   rclcpp::init(argc, argv);
-  auto node = rclcpp::Node::make_shared("fnode");
   awesome_library::Awesomeness a;
   RCLCPP_INFO(rclcpp::get_logger("FantasticNode"), "Fantastic %f", a.pose.x);
-  rclcpp::spin(node);
+  ros::spin();
   return 0;
 }

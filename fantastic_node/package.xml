@@ -8,7 +8,7 @@
 
   <license>Proprietary</license>
 
-  <buildtool_depend>ament_cmake_ros</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>awesome_library</depend>
   <depend>rclcpp</depend>
   <export>

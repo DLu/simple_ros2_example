@@ -6,10 +6,11 @@ find_package(rclcpp REQUIRED)
 
 include_directories(${awesome_library_INCLUDE_DIRS})
 
-add_executable(${PROJECT_NAME} src/fnode.cpp)
-target_link_libraries(fantastic_node ${rclcpp_LIBRARIES} ${awesome_library_LIBRARIES})
-install(TARGETS fantastic_node
-        RUNTIME DESTINATION lib/${PROJECT_NAME}
-)
-ament_package()
+add_executable(${PROJECT_NAME}_node src/fnode.cpp)
 
+ament_target_dependencies(fantastic_node_node "awesome_library")
+ament_export_dependencies(awesome_library roscpp)
+ament_package()
+install(TARGETS fantastic_node_node
+        RUNTIME DESTINATION bin
+)
