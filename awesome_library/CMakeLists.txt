@@ -7,13 +7,13 @@ include_directories(include)
 
 add_library(awesome_library src/awesomeness.cpp)
 ament_target_dependencies(awesome_library "geometry_msgs")
-ament_export_include_directories(${include_dirs})
+ament_export_include_directories(include)
 ament_export_libraries(${PROJECT_NAME})
 ament_export_dependencies(geometry_msgs)
 ament_package()
 
 install(DIRECTORY include/
-        DESTINATION include/${PROJECT_NAME}
+        DESTINATION include
 )
 install(TARGETS awesome_library
         ARCHIVE DESTINATION lib
